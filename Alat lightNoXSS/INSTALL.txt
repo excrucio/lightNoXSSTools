@@ -1,0 +1,18 @@
+1. Potrebno je u .htaccess u korijen stranice dodati liniju:
+php_value auto_prepend_file "./lightNoXSS/lightNoXSS.php"
+
+Ta æe linije prouzrokovati da se pri pristupu na bilo koju podstranicu pozove i skripta lightNoXSS.php
+Za više pogledati:
+http://www.php.net/manual/en/ini.core.php#ini.auto-prepend-file
+
+2. U korijen stranice kopirati odavde èitavu mapu lightNoXSS sa svim sadržajem.
+
+Time je Vaša stranica zaštiæena on XSS napada.
+
+Ako želite ju zaštiti i od mXSS napada potrebno je samo da se za svaki ispis
+ u javascriptu pozove funkcija NOmXSS(element) kojoj se prosljeðuje element koji može
+ sadržavati niz za napad.
+
+Funkcija NOmXSS(element) vraæa znakovni niz koji se kao takav može koristiti bez
+ bojazni od moguæih mXSS napada.
+

@@ -1,0 +1,17 @@
+Ovaj alat analizira log datoteke (dnevnike) koje zapisuje Apache Server.
+Toènije, analizira access.log datoteku na taj naèin da gleda ima li kakvih napada unutar
+zapisanih zahtjeva te, ako je broj napada sa iste IP adrese prešao broj koji je korisnik definirao,
+blokira daljnji pristup sa te IP adrese.
+Blokirane ip adrese se zapisuju u datoteku blokirani.txt na istom mjestu gdje je i alat.
+
+Može služiti i za provjeru ostalih log datoteka, ako su u Common Log formatu.
+http://en.wikipedia.org/wiki/Common_Log_Format
+
+Za svaki detektirani napad zapisuje, unutar datoteke cudni.log, u novi red IP adresu s koji je pristigao napad.
+Datoteka cudni.log se nalazi na istome mjestu kao i alat.
+Traženje napada se aktivira svakih 5 minuta, ako drugaèije nije zadano.
+Ako se konzolni prozor zatvori, skripta prestaje s radom.
+
+Potrebno je, ako nemate, instalirati programski jezik Python 3 ili viša verzija.
+Dostupan je na: https://www.python.org/downloads/ 
+
